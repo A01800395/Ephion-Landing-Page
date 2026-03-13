@@ -1,0 +1,571 @@
+<html lang="es"><head>
+<meta charset="UTF-8">
+
+<style id="webmakerstyle">
+
+</style>
+</head>
+<body>
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ephion | Energía Sustentable e Innovación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        /* Variables de color - Paleta Eco-Tech */
+        :root {
+            --primary-color: #10b981; /* Verde Esmeralda */
+            --primary-hover: #059669; /* Verde más oscuro */
+            --dark-bg: #0f172a; /* Slate oscuro para secciones tech */
+            --darker-bg: #020617; /* Slate muy oscuro */
+            --light-bg: #f8fafc; /* Gris muy claro */
+            --text-main: #334155;
+            --text-light: #94a3b8;
+            --white: #ffffff;
+            --success-color: #059669;
+        }
+
+        /* Reseteo básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Utilidades */
+        .badge {
+            display: inline-block;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Navegación */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--darker-bg);
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            font-weight: 500;
+        }
+
+        .nav-links a {
+            color: var(--text-main);
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2), 0 2px 4px -1px rgba(16, 185, 129, 0.1);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3), 0 4px 6px -2px rgba(16, 185, 129, 0.15);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+            padding: 14rem 2rem 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(16,185,129,0.08) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+        }
+
+        .hero-container {
+            max-width: 850px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: var(--darker-bg);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Características / Soluciones */
+        .features {
+            padding: 8rem 2rem;
+            background-color: var(--white);
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-header h2 {
+            font-size: 3rem;
+            color: var(--darker-bg);
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary-color);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+            border-color: transparent;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: rgba(16, 185, 129, 0.1);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            color: var(--darker-bg);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* Banner de Impacto (Nosotros) */
+        .impact-section {
+            background-color: var(--dark-bg);
+            color: var(--white);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .impact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .impact-container h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .impact-container p {
+            color: var(--text-light);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: var(--light-bg);
+            padding: 8rem 2rem;
+            text-align: center;
+        }
+
+        .newsletter-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 4rem 3rem;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.05);
+        }
+
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: var(--darker-bg);
+            letter-spacing: -0.5px;
+        }
+
+        .newsletter p {
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-main);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1.2rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: var(--light-bg);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--primary-color);
+            background-color: var(--white);
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+        }
+
+        .btn-newsletter {
+            padding: 1.2rem 2rem;
+            border-radius: 10px;
+            white-space: nowrap;
+        }
+
+        .success-message {
+            display: none;
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success-color);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1.5rem;
+            font-weight: 600;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            color: var(--white);
+            padding: 5rem 2rem 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-logo span {
+            color: var(--primary-color);
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 400px;
+        }
+
+        .copyright {
+            color: #475569;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+            padding-top: 2rem;
+            width: 100%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .hero {
+                padding: 10rem 1.5rem 5rem;
+            }
+            .form-row {
+                flex-direction: column;
+            }
+            .btn-newsletter {
+                width: 100%;
+            }
+            .newsletter-container {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+
+
+
+    <!-- Menú de Navegación -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Ephion<span>.</span></div>
+            <nav class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#soluciones">Soluciones</a>
+                <a href="#impacto">Impacto Social</a>
+            </nav>
+            <a href="#newsletter" class="btn-primary">Únete al cambio</a>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <span class="badge">Innovación en Energía</span>
+            <h1>Revolucionando la <span>energía sustentable</span></h1>
+            <p>Combinamos portabilidad, estética y tecnología limpia. Aprovechamos el poder del sol para transformar la generación distribuida en México.</p>
+            <a href="#soluciones" class="btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Conoce nuestra tecnología</a>
+        </div>
+    </section>
+
+    <!-- Sección de Soluciones / Características -->
+    <section id="soluciones" class="features">
+        <div class="features-header">
+            <h2>Tecnología diseñada para el futuro</h2>
+            <p style="color: var(--text-light); font-size: 1.2rem;">Rompemos las barreras de la adopción energética con productos pensados en el usuario y el planeta.</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">☀️</div>
+                <h3>Generación Limpia</h3>
+                <p>Aprovechamos la radiación solar en zonas urbanas para convertirlas en verdaderos polos de generación eléctrica, reduciendo drásticamente la huella de carbono.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📐</div>
+                <h3>Diseño y Portabilidad</h3>
+                <p>Nuestra visión demuestra que la sustentabilidad no tiene que ser estática ni invasiva. Diseñamos hardware con estética premium y alta portabilidad.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌱</div>
+                <h3>Impacto Social</h3>
+                <p>No solo creamos tecnología; impulsamos una cultura de innovación climática. Facilitamos el acceso a energía limpia para un México más sustentable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Impacto (Nosotros) -->
+    <section id="impacto" class="impact-section">
+        <div class="impact-container">
+            <h2>Nuestra Misión</h2>
+            <p>Nacidos de la cultura de emprendimiento e innovación, en Ephion creemos que las ciudades esconden un potencial energético masivo. A través de investigación en laboratorio, creación de prototipos y un modelo de negocio sostenible, estamos construyendo las herramientas para aprovechar cada rayo de sol.</p>
+        </div>
+    </section>
+
+    <!-- Sección Newsletter -->
+    <section id="newsletter" class="newsletter">
+        <div class="newsletter-container">
+            <h2>Sé parte de la transición</h2>
+            <p>Suscríbete a nuestro boletín para recibir actualizaciones sobre nuestros nuevos prototipos, desarrollos de hardware y noticias sobre el futuro energético de México.</p>
+            
+            <form id="subscribe-form" class="newsletter-form">
+                <div class="form-row">
+                    <input type="email" id="email" class="newsletter-input" placeholder="tu@correo.com" required="">
+                    <button type="submit" class="btn-primary btn-newsletter">Suscribirme</button>
+                </div>
+            </form>
+            
+            <div id="success-msg" class="success-message">
+                ¡Gracias por unirte! Pronto recibirás noticias nuestras.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">Ephion<span>.</span></div>
+            <p class="footer-text">Energía limpia, diseño portátil e impacto social para un mundo más sustentable.</p>
+            <div class="copyright">
+                © 2026 Ephion. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Manejo del formulario de Newsletter
+        const form = document.getElementById('subscribe-form');
+        const successMsg = document.getElementById('success-msg');
+        const emailInput = document.getElementById('email');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const emailValue = emailInput.value;
+            
+            if(emailValue) {
+                // Aquí se integraría la API de correos en el futuro
+                successMsg.style.display = 'block';
+                emailInput.value = ''; 
+                
+                setTimeout(() => {
+                    successMsg.style.display = 'none';
+                }, 4000);
+            }
+        });
+    </script>
+
+
+
+
+
+</body></html>
